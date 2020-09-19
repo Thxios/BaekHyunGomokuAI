@@ -4,7 +4,7 @@ from tqdm import tqdm
 from Gomoku.Board import Board
 
 from MCTS.Node import TreeNode
-from MCTS.NetworkFunction import expand_policy_network, expand_pocliy_random
+from MCTS.policy import expand_policy_network, expand_pocliy_random
 from MCTS.simulation import simulate_network, simulate_random
 from MCTS.log import Log
 

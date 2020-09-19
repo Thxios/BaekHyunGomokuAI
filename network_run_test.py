@@ -3,7 +3,7 @@ from common import *
 
 from Gomoku.Board import Board
 from Network.Runner import TreePolicyRunner, RolloutPolicyRunner
-from MCTS.NetworkFunction import _convolve_board_available_narrow
+from MCTS.policy import _convolve_board_available_narrow
 
 test = [
     [

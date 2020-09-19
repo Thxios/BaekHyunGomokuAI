@@ -1,7 +1,7 @@
 from common import *
 
 from Gomoku.Board import Board
-from MCTS.NetworkFunction import rollout_policy_network, rollout_policy_random
+from MCTS.policy import rollout_policy_network, rollout_policy_random
 
 from Network.Runner import ValueRunner
 

@@ -3,7 +3,7 @@ from common import *
 from Gomoku.Agent import _Agent
 from MCTS.Tree import MonteCarloTree
 from Gomoku.Board import Board
-from MCTS.NetworkFunction import expand_policy_network, rollout_policy_network
+from MCTS.policy import expand_policy_network, rollout_policy_network
 
 
 
