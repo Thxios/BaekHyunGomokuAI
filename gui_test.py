@@ -6,7 +6,7 @@ if __name__ == '__main__':
     print('\n\n  Now loading...')
     from Gomoku.Agent import AgentGUI
     from Gomoku.Server import Server
-    from MCTS.Agent import DeepAgentMCTS, PureAgentMCTS
+    from MCTS.Agent import DeepMCTSAgent, PureMCTSAgent
 
     from multiprocessing import Process, Queue
 
@@ -23,10 +23,10 @@ if __name__ == '__main__':
     q_move = Queue()
     q_draw = Queue()
     player1 = AgentGUI(queue_move=q_move)
-    # player2 = DeepAgentMCTS(100)
-    player2 = PureAgentMCTS(1000)
-    # server = Server(player2, player1, queue_draw=q_draw)
-    server = Server(player1, player2, queue_draw=q_draw)
+    player2 = DeepMCTSAgent(500)
+    # player2 = PureAgentMCTS(1000)
+    server = Server(player2, player1, queue_draw=q_draw)
+    # server = Server(player1, player2, queue_draw=q_draw)
 
     # window = BoardWindow(queue=queue)
 

@@ -7,11 +7,14 @@ from MCTS.policy import expand_policy_network, rollout_policy_network
 
 
 
-class DeepAgentMCTS(_Agent):
+class DeepMCTSAgent(_Agent):
+    use_mcts = True
+
     def __init__(self, compute_budget: int):
+        self.compute_budget = compute_budget
         self.mct = MonteCarloTree(
             compute_budget=compute_budget,
-            expand_bound=max(compute_budget // 500, 5),
+            expand_threshold=6,
             rollout_limit=100,
             use_network=True
         )
@@ -25,11 +28,14 @@ class DeepAgentMCTS(_Agent):
         return next_move
 
 
-class PureAgentMCTS(_Agent):
+class PureMCTSAgent(_Agent):
+    use_mcts = True
+
     def __init__(self, compute_budget):
+        self.compute_budget = compute_budget
         self.mct = MonteCarloTree(
             compute_budget=compute_budget,
-            expand_bound=max(compute_budget // 500, 5),
+            expand_threshold=2,
             rollout_limit=200,
             use_network=False
         )

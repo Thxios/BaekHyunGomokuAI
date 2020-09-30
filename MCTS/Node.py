@@ -3,7 +3,7 @@ from common import *
 
 class TreeNode:
     # weight_c = np.sqrt(2)
-    weight_c = 5
+    c_puct = 4
 
     def __init__(self, parent, prior_prob, depth=0):
         self.parent = parent
@@ -14,8 +14,6 @@ class TreeNode:
         self.sqrt_visit = 0.
         self.Q = 0
         self.U = 0
-        # self.W_c = -np.log(0.1 * (self.depth - 1) + 1) + TreeNode.weight_c
-        self.W_c = TreeNode.weight_c
 
         self.children: Dict[int, TreeNode] = {}
 
@@ -48,15 +46,15 @@ class TreeNode:
         self.sqrt_visit = np.sqrt(self.visit)
         self.Q += (bp_value - self.Q) / self.visit
 
-    def evaluate(self) -> float:
+    def p_uct(self) -> float:
         # self.U = (self.probability + 0.01) * np.sqrt(self.parent.visit) / (self.visit + 1)
         self.U = self.probability * self.parent.sqrt_visit / (self.visit + 1)
         Q = min(self.visit / 10, 1) * self.Q
         # return self.Q + self.W_c * self.U
-        return Q + self.W_c * self.U
+        return Q + self.c_puct * self.U
 
     def select(self):
-        return max(self.children.items(), key=lambda pair: pair[1].evaluate())
+        return max(self.children.items(), key=lambda pair: pair[1].p_uct())
 
     def is_root(self) -> bool:
         return self.parent is None

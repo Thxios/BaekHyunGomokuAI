@@ -4,6 +4,7 @@ from Gomoku.Board import Board
 
 
 class _Agent:
+    use_mcts = False
     gui = False
 
     def get_action(self, state: Board) -> int:

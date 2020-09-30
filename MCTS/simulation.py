@@ -41,18 +41,16 @@ def simulate_network(board: Board, limit=100, q_confidence=0.5):
             next_action = max(board.available, key=lambda move: action_prob[move])
             board.play(next_action)
 
-
-
     end_time = time.time() * 1000
 
     # print('%.5fms  %.5fms  %.5f%%' % (end_time - start_time, net_run_time, net_run_time * 100 / (end_time - start_time)))
     if is_end:
-        return winner
-    else:
-        value_network_Q = ValueRunner(board.get_board_array())
-        if board.current_player == BLACK_:  # array shape (white, black)
-            value_network_Q = 1 - value_network_Q  # change to black side
-        return q_confidence * value_network_Q
+        if winner is not None:
+            return winner
+    value_network_Q = ValueRunner(board.get_board_array())
+    if board.current_player == BLACK_:  # array shape (white, black)
+        value_network_Q = 1 - value_network_Q  # change to black side
+    return q_confidence * (value_network_Q - 0.5) + 0.5
 
 
 def simulate_random(board: Board, limit=200):
@@ -82,17 +80,18 @@ def simulate_random(board: Board, limit=200):
         t2 = time.time() * 1000
         net_run_time += t2 - t1
 
-        next_action = np.random.choice(15 * 15, 1, p=action_prob)[0]
+        next_action = np.argmax(action_prob)
 
         while not board.play(next_action):
-            next_action = np.random.choice(15 * 15, 1, p=action_prob)[0]
+            next_action = np.argmax(action_prob)
 
     end_time = time.time() * 1000
 
     # print('%.5fms  %.5fms  %.5f%%' % (end_time - start_time, net_run_time, net_run_time * 100 / (end_time - start_time)))
     if is_end:
-        return winner
-    else:
-        return 0.5
+        if winner is not None:
+            return winner
+
+    return 0.5
 
 

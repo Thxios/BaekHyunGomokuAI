@@ -6,7 +6,7 @@ from Gomoku.Board import Board
 from MCTS.Node import TreeNode
 from MCTS.policy import expand_policy_network, expand_pocliy_random
 from MCTS.simulation import simulate_network, simulate_random
-from MCTS.log import Log
+from log import Log
 
 class MonteCarloTree:
     value_confidence = 0.5
@@ -14,20 +14,20 @@ class MonteCarloTree:
     def __init__(
             self,
             compute_budget: int,
-            expand_bound: int,
+            expand_threshold: int,
             rollout_limit: int,
             use_network: bool,
     ):
         self.compute_budget = compute_budget
-        self.expand_bound = expand_bound
+        self.expand_threshold = expand_threshold
         self.rollout_limit = rollout_limit
-        self.network = use_network
+        self.use_network = use_network
 
         self.root = TreeNode(None, 1.)
 
     def rollout_simulation(self, board: Board):
         current_turn = board.current_player
-        if self.network:
+        if self.use_network:
             simulation_result = simulate_network(board, self.rollout_limit, self.value_confidence)
         else:
             simulation_result = simulate_random(board, self.rollout_limit)
@@ -45,8 +45,8 @@ class MonteCarloTree:
             if node.is_leaf():
                 # if node.depth < 5 or node.depth < 2 + start_depth or node.visit >= self.expand_bound:
                 if (node.depth < start_depth + 5 and node.visit > (node.depth - start_depth) * 2) \
-                        or node.visit >= self.expand_bound:
-                    if self.network:
+                        or node.visit >= self.expand_threshold:
+                    if self.use_network:
                         policy = expand_policy_network(state)
                     else:
                         policy = expand_pocliy_random(state)
@@ -97,10 +97,6 @@ class MonteCarloTree:
         for action, c in sorted(children, key=lambda child: child[1].visit, reverse=True)[:5]:
             if c.visit == 0 and c.probability < 0.01:
                 continue
-            # print(move_int2xy(action),
-            #       '  \tvisit: {0}  \teval:  {1:.5f}  \tQ: {2:.5f}  \tprob: {3:.2f}%'.format(
-            #           c.visit, c.evaluate(), c.Q, c.probability * 100))
-            # print('%s\t\t%d   \t   %.2f%%   \t%.4f' % (move_int2xy(action), c.visit, c.probability * 100, c.Q))
             Log.silent_log('|  ' + ' ' + str(move_int2cord(action)).ljust(7, ' ') + '|  ' + \
                            (' %d' % c.visit).ljust(8, ' ') + '|  ' + \
                            (' %.3f%%' % (c.probability * 100)).ljust(13, ' ') + '|  ' + \

@@ -37,8 +37,8 @@ def create_tree_policy_network():
     model.add(Conv2D(n_hidden, (3, 3), activation='relu', padding='same', input_shape=(15, 15, n_kernel), name='Conv1'))
     model.add(Conv2D(n_hidden, (3, 3), activation='relu', padding='same', input_shape=(15, 15, n_hidden), name='Conv2'))
     model.add(Conv2D(1, (1, 1), activation='relu', padding='same', input_shape=(15, 15, n_hidden), name='Conv_1x1'))
-    model.add(Flatten())
-    model.add(Softmax())
+    model.add(Flatten(name='flatten'))
+    model.add(Softmax(name='softmax'))
 
     model.compile(
         optimizer='adam',
@@ -57,7 +57,7 @@ def create_value_network():
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same', input_shape=(11, 11, 128), name='Conv1'))
     model.add(MaxPool2D((2, 2), padding='same', name='MaxPool1'))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same', input_shape=(6, 6, 128), name='Conv2'))
-    model.add(Flatten())
+    model.add(Flatten(name='flatten'))
     model.add(Dense(512, activation='relu', name='FC_1'))
     model.add(Dense(1, activation='sigmoid', name='FC_2'))
 
@@ -82,8 +82,8 @@ def create_rollout_policy_network_v2():
     model.add(Conv2D(n_hidden, (3, 3), activation='relu', padding='same', input_shape=(15, 15, n_kernels), name='Conv1'))
     model.add(Conv2D(n_hidden, (3, 3), activation='relu', padding='same', input_shape=(15, 15, n_kernels), name='Conv2'))
     model.add(Conv2D(1, (1, 1), activation='relu', padding='same', input_shape=(15, 15, n_hidden), name='Conv_1x1'))
-    model.add(Flatten())
-    model.add(Softmax())
+    model.add(Flatten(name='flatten'))
+    model.add(Softmax(name='softmax'))
 
     model.compile(
         optimizer='adam',
@@ -121,6 +121,5 @@ def create_tree_policy_network_v2():
 
 
 if __name__ == '__main__':
-    test = create_tree_policy_network()
-    print(test)
-    print(type(test))
+    test = create_value_network()
+    test.summary()

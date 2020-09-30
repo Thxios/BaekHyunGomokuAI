@@ -1,3 +1,6 @@
+import sys
+sys.path.extend(['C:\\Users\\LEE\\Scripts\\Python37\\GomokuAI', 'C:/Users/LEE/Scripts/Python37/GomokuAI'])
+
 import tensorflow as tf
 import numpy as np
 import pickle as pkl
@@ -71,7 +74,20 @@ def train_v2(model, data_path, epoch, cp_dir, save_step=False):
         train_x,
         train_y,
         batch_size=batch_size,
-        epochs=epoch,
+        epochs=epoch//2,
+        callbacks=[checkpoint_callback],
+        # validation_data=(validation_x, validation_y)
+        validation_data=(test_x, test_y)
+    )
+
+    test_loss, test_acc = model.evaluate(test_x, test_y, verbose=2)
+    print(test_loss, test_acc)
+
+    model.fit(
+        train_x,
+        train_y,
+        batch_size=batch_size,
+        epochs=epoch//2,
         callbacks=[checkpoint_callback],
         # validation_data=(validation_x, validation_y)
         validation_data=(test_x, test_y)
@@ -99,9 +115,9 @@ def train_tree_network():
 
 def train_value_network():
     model = create_value_network()
-    cp_dir = 'save/value/swap1/'
+    cp_dir = 'save/value/log_test/'
 
-    train_v2(model, value_data_path, 5, cp_dir, save_step=True)
+    train_v2(model, value_data_path, 10, cp_dir, save_step=True)
 
 
 if __name__ == '__main__':

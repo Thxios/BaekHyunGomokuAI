@@ -59,12 +59,12 @@ if __name__ == '__main__':
 
     from Gomoku.Agent import AgentGUI
     from Gomoku.Server import Server
-    from MCTS.Agent import DeepAgentMCTS
+    from MCTS.Agent import DeepMCTSAgent
     os.system('cls')
 
 
     player1 = AgentGUI(queue_move=q_move)
-    player2 = DeepAgentMCTS(compute_budget)
+    player2 = DeepMCTSAgent(compute_budget)
     # os.system('cls')
     if ai_color:
         server = Server(player2, player1, queue_draw=q_draw)
