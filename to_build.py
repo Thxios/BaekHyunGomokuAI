@@ -3,8 +3,8 @@
 from common import *
 # print(__name__)
 # time.sleep(3)
-os.system('cls')
 os.system("mode con cols=60 lines=35")
+os.system('cls')
 print('\n\n  Now loading...')
 
 import multiprocessing as mp
@@ -18,6 +18,7 @@ def start(q1, q2, cp):
     # print(__name__)
     window = BoardWindow(queue_move=q1, queue_draw=q2)
     window.title('Baekhyun Gomoku AI - compute budget: ' + str(cp))
+    window.resizable(False, False)
     window.run()
 
 
@@ -37,17 +38,18 @@ def load_config():
 
 if __name__ == '__main__':
     mp.freeze_support()
-    # os.system('cls')
+    os.system('cls')
     try:
         compute_budget, ai_color = load_config()
     except Exception:
+        print(' ')
         print(' fail to load settings.')
         print(' please make sure the settings.txt file is valid format.')
         print(' start with default setting...')
-        print(' compute budget: 1000')
+        print(' compute budget: 500')
         print(' AI plays on black side')
         time.sleep(3)
-        compute_budget = 1000
+        compute_budget = 500
         ai_color = True
 
 
@@ -56,6 +58,7 @@ if __name__ == '__main__':
     gui_handler = mp.Process(target=start, args=(q_move, q_draw, compute_budget))
     gui_handler.start()
 
+    # print('here')
 
     from Gomoku.Agent import AgentGUI
     from Gomoku.Server import Server
@@ -70,8 +73,6 @@ if __name__ == '__main__':
         server = Server(player2, player1, queue_draw=q_draw)
     else:
         server = Server(player1, player2, queue_draw=q_draw)
-
-    # window = BoardWindow(queue=queue)
 
     q_draw.put(True)
     server.run()

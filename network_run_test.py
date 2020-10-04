@@ -140,7 +140,7 @@ for x, y in test[n_test]:
     board_to_run.play(move_xy2int(x, y))
 board_to_run.show()
 
-mul = 100
+mul = 1000
 
 if __name__ == '__main__':
     b_arr = board_to_run.get_board_array()

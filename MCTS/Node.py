@@ -3,7 +3,7 @@ from common import *
 
 class TreeNode:
     # weight_c = np.sqrt(2)
-    c_puct = 4
+    c_puct = 5
 
     def __init__(self, parent, prior_prob, depth=0):
         self.parent = parent

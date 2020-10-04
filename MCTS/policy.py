@@ -78,7 +78,8 @@ def expand_policy_network(board: Board) -> List[Tuple[int, float]]:
     probability = TreePolicyRunner(board_array)
 
     if len(board.moved) == 1:
-        return list(map(lambda move: (move, probability[move]), __second_move_available))
+        if board.moved[0] == move_xy2int(7, 7):
+            return list(map(lambda move: (move, probability[move]), __second_move_available))
     if len(board.must[board.current_player]):
         return list(map(lambda move: (move, probability[move]), (board.must[board.current_player])))
     if len(board.must[0] | board.must[1]):
