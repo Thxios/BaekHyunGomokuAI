@@ -63,7 +63,7 @@ def create_value_network():
 
     model.compile(
         optimizer='adam',
-        loss='binary_crossentropy',
+        loss='mse',
         metrics=['accuracy']
     )
 
