@@ -1,0 +1,92 @@
+Model: "TreePolicyNet"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+Conv_5x5 (Conv2D)            (None, 15, 15, 128)       6528      
+_________________________________________________________________
+bn1 (BatchNormalization)     (None, 15, 15, 128)       512       
+_________________________________________________________________
+Conv1_1x1 (Conv2D)           (None, 15, 15, 128)       16512     
+_________________________________________________________________
+Conv1_3x3 (Conv2D)           (None, 15, 15, 256)       295168    
+_________________________________________________________________
+bn2 (BatchNormalization)     (None, 15, 15, 256)       1024      
+_________________________________________________________________
+Conv2_1x1 (Conv2D)           (None, 15, 15, 128)       32896     
+_________________________________________________________________
+Conv2_3x3 (Conv2D)           (None, 15, 15, 256)       295168    
+_________________________________________________________________
+bn3 (BatchNormalization)     (None, 15, 15, 256)       1024      
+_________________________________________________________________
+Conv3_1x1 (Conv2D)           (None, 15, 15, 128)       32896     
+_________________________________________________________________
+Conv3_3x3 (Conv2D)           (None, 15, 15, 256)       295168    
+_________________________________________________________________
+bn4 (BatchNormalization)     (None, 15, 15, 256)       1024      
+_________________________________________________________________
+Conv4_1x1 (Conv2D)           (None, 15, 15, 128)       32896     
+_________________________________________________________________
+Conv4_3x3 (Conv2D)           (None, 15, 15, 1)         1153      
+_________________________________________________________________
+flatten (Flatten)            (None, 225)               0         
+_________________________________________________________________
+softmax (Softmax)            (None, 225)               0         
+=================================================================
+Total params: 1,011,969
+Trainable params: 1,010,177
+Non-trainable params: 1,792
+_________________________________________________________________
+model ready
+
+
+train: (940350, 15, 15, 2) (940350,)
+validation: (50000, 15, 15, 2) (50000,)
+test: (50000, 15, 15, 2) (50000,)
+data ready
+
+
+Epoch 1/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.9475 - accuracy: 0.4551 - sparse_top_k_categorical_accuracy: 0.6826
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-001.ckpt
+7347/7347 [==============================] - 280s 38ms/step - loss: 1.9475 - accuracy: 0.4551 - sparse_top_k_categorical_accuracy: 0.6826 - val_loss: 1.8077 - val_accuracy: 0.4874 - val_sparse_top_k_categorical_accuracy: 0.7104
+Epoch 2/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.7369 - accuracy: 0.4982 - sparse_top_k_categorical_accuracy: 0.7260
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-002.ckpt
+7347/7347 [==============================] - 280s 38ms/step - loss: 1.7369 - accuracy: 0.4982 - sparse_top_k_categorical_accuracy: 0.7260 - val_loss: 1.6894 - val_accuracy: 0.5123 - val_sparse_top_k_categorical_accuracy: 0.7362
+Epoch 3/5
+7346/7347 [============================>.] - ETA: 0s - loss: 1.6542 - accuracy: 0.5160 - sparse_top_k_categorical_accuracy: 0.7436
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-003.ckpt
+7347/7347 [==============================] - 279s 38ms/step - loss: 1.6542 - accuracy: 0.5160 - sparse_top_k_categorical_accuracy: 0.7436 - val_loss: 1.6261 - val_accuracy: 0.5220 - val_sparse_top_k_categorical_accuracy: 0.7489
+Epoch 4/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.5992 - accuracy: 0.5282 - sparse_top_k_categorical_accuracy: 0.7564
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-004.ckpt
+7347/7347 [==============================] - 279s 38ms/step - loss: 1.5992 - accuracy: 0.5282 - sparse_top_k_categorical_accuracy: 0.7564 - val_loss: 1.5630 - val_accuracy: 0.5393 - val_sparse_top_k_categorical_accuracy: 0.7644
+Epoch 5/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.5564 - accuracy: 0.5377 - sparse_top_k_categorical_accuracy: 0.7657
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-005.ckpt
+7347/7347 [==============================] - 279s 38ms/step - loss: 1.5564 - accuracy: 0.5377 - sparse_top_k_categorical_accuracy: 0.7657 - val_loss: 1.5302 - val_accuracy: 0.5436 - val_sparse_top_k_categorical_accuracy: 0.7720
+1563/1563 - 7s - loss: 1.6356 - accuracy: 0.5201 - sparse_top_k_categorical_accuracy: 0.7481
+1.6355781555175781 0.5200600028038025 0.7480800151824951
+Epoch 1/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.5190 - accuracy: 0.5469 - sparse_top_k_categorical_accuracy: 0.7743
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-001.ckpt
+7347/7347 [==============================] - 279s 38ms/step - loss: 1.5190 - accuracy: 0.5469 - sparse_top_k_categorical_accuracy: 0.7743 - val_loss: 1.4720 - val_accuracy: 0.5601 - val_sparse_top_k_categorical_accuracy: 0.7857
+Epoch 2/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.4868 - accuracy: 0.5548 - sparse_top_k_categorical_accuracy: 0.7815
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-002.ckpt
+7347/7347 [==============================] - 278s 38ms/step - loss: 1.4868 - accuracy: 0.5548 - sparse_top_k_categorical_accuracy: 0.7815 - val_loss: 1.4413 - val_accuracy: 0.5684 - val_sparse_top_k_categorical_accuracy: 0.7919
+Epoch 3/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.4554 - accuracy: 0.5629 - sparse_top_k_categorical_accuracy: 0.7889
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-003.ckpt
+7347/7347 [==============================] - 278s 38ms/step - loss: 1.4554 - accuracy: 0.5629 - sparse_top_k_categorical_accuracy: 0.7889 - val_loss: 1.4195 - val_accuracy: 0.5745 - val_sparse_top_k_categorical_accuracy: 0.7974
+Epoch 4/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.4268 - accuracy: 0.5698 - sparse_top_k_categorical_accuracy: 0.7959
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-004.ckpt
+7347/7347 [==============================] - 278s 38ms/step - loss: 1.4268 - accuracy: 0.5698 - sparse_top_k_categorical_accuracy: 0.7959 - val_loss: 1.3875 - val_accuracy: 0.5806 - val_sparse_top_k_categorical_accuracy: 0.8048
+Epoch 5/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.3994 - accuracy: 0.5765 - sparse_top_k_categorical_accuracy: 0.8017
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/tree/bn/cp-005.ckpt
+7347/7347 [==============================] - 278s 38ms/step - loss: 1.3994 - accuracy: 0.5765 - sparse_top_k_categorical_accuracy: 0.8017 - val_loss: 1.3480 - val_accuracy: 0.5926 - val_sparse_top_k_categorical_accuracy: 0.8141
+1563/1563 - 6s - loss: 1.6083 - accuracy: 0.5323 - sparse_top_k_categorical_accuracy: 0.7554
+1.608324408531189 0.5323399901390076 0.7553799748420715
+train finished

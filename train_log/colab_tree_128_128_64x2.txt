@@ -1,0 +1,53 @@
+Model: "TreePolicyNet"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+Conv_5x5 (Conv2D)            (None, 15, 15, 128)       6528      
+_________________________________________________________________
+Conv1 (Conv2D)               (None, 15, 15, 128)       147584    
+_________________________________________________________________
+Conv2 (Conv2D)               (None, 15, 15, 64)        73792     
+_________________________________________________________________
+Conv3 (Conv2D)               (None, 15, 15, 64)        36928     
+_________________________________________________________________
+Conv_1x1 (Conv2D)            (None, 15, 15, 1)         65        
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 225)               0         
+_________________________________________________________________
+softmax_1 (Softmax)          (None, 225)               0         
+=================================================================
+Total params: 264,897
+Trainable params: 264,897
+Non-trainable params: 0
+_________________________________________________________________
+model ready
+
+
+train: (940350, 15, 15, 2) (940350,)
+validation: (50000, 15, 15, 2) (50000,)
+test: (50000, 15, 15, 2) (50000,)
+data ready
+
+
+Epoch 1/5
+7347/7347 [==============================] - ETA: 0s - loss: 1.9907 - accuracy: 0.4471
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/tree/128_128_64x2/cp-001.ckpt
+7347/7347 [==============================] - 78s 11ms/step - loss: 1.9907 - accuracy: 0.4471 - val_loss: 1.8205 - val_accuracy: 0.4835
+Epoch 2/5
+7342/7347 [============================>.] - ETA: 0s - loss: 1.7870 - accuracy: 0.4908
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/tree/128_128_64x2/cp-002.ckpt
+7347/7347 [==============================] - 77s 11ms/step - loss: 1.7869 - accuracy: 0.4908 - val_loss: 1.7318 - val_accuracy: 0.5074
+Epoch 3/5
+7342/7347 [============================>.] - ETA: 0s - loss: 1.7221 - accuracy: 0.5049
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/tree/128_128_64x2/cp-003.ckpt
+7347/7347 [==============================] - 77s 11ms/step - loss: 1.7221 - accuracy: 0.5049 - val_loss: 1.6812 - val_accuracy: 0.5143
+Epoch 4/5
+7345/7347 [============================>.] - ETA: 0s - loss: 1.6787 - accuracy: 0.5148
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/tree/128_128_64x2/cp-004.ckpt
+7347/7347 [==============================] - 77s 11ms/step - loss: 1.6787 - accuracy: 0.5148 - val_loss: 1.6419 - val_accuracy: 0.5247
+Epoch 5/5
+7343/7347 [============================>.] - ETA: 0s - loss: 1.6457 - accuracy: 0.5225
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/tree/128_128_64x2/cp-005.ckpt
+7347/7347 [==============================] - 77s 11ms/step - loss: 1.6457 - accuracy: 0.5225 - val_loss: 1.6156 - val_accuracy: 0.5312
+1563/1563 - 3s - loss: 1.7049 - accuracy: 0.5057
+1.7048509120941162 0.5057399868965149

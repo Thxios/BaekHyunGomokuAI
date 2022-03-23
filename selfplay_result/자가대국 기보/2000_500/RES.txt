@@ -1,0 +1,13 @@
+W
+B
+B
+B
+W
+B
+B
+B
+B
+W
+
+BLACK 7
+WHITE 3

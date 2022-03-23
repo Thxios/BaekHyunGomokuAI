@@ -1,0 +1,14 @@
+W
+B
+W
+W
+B
+W
+W
+B
+B
+W
+W
+
+BLACK 4
+WHITE 6

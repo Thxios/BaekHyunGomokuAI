@@ -1,0 +1,74 @@
+Model: "TreePolicyNet"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+Conv_5x5 (Conv2D)            (None, 15, 15, 128)       6528      
+_________________________________________________________________
+Conv1 (Conv2D)               (None, 15, 15, 128)       147584    
+_________________________________________________________________
+Conv2 (Conv2D)               (None, 15, 15, 128)       147584    
+_________________________________________________________________
+Conv_1x1 (Conv2D)            (None, 15, 15, 1)         129       
+_________________________________________________________________
+flatten (Flatten)            (None, 225)               0         
+_________________________________________________________________
+softmax (Softmax)            (None, 225)               0         
+=================================================================
+Total params: 301,825
+Trainable params: 301,825
+Non-trainable params: 0
+_________________________________________________________________
+model ready
+
+
+train: (940350, 15, 15, 2) (940350,)
+validation: (50000, 15, 15, 2) (50000,)
+test: (50000, 15, 15, 2) (50000,)
+data ready
+
+
+Epoch 1/5
+7347/7347 [==============================] - ETA: 0s - loss: 2.0259 - accuracy: 0.4404 - sparse_top_k_categorical_accuracy: 0.6679
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-001.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 2.0259 - accuracy: 0.4404 - sparse_top_k_categorical_accuracy: 0.6679 - val_loss: 1.9058 - val_accuracy: 0.4640 - val_sparse_top_k_categorical_accuracy: 0.6937
+Epoch 2/5
+7345/7347 [============================>.] - ETA: 0s - loss: 1.8431 - accuracy: 0.4796 - sparse_top_k_categorical_accuracy: 0.7033
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-002.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.8431 - accuracy: 0.4796 - sparse_top_k_categorical_accuracy: 0.7033 - val_loss: 1.7967 - val_accuracy: 0.4925 - val_sparse_top_k_categorical_accuracy: 0.7132
+Epoch 3/5
+7343/7347 [============================>.] - ETA: 0s - loss: 1.7838 - accuracy: 0.4926 - sparse_top_k_categorical_accuracy: 0.7151
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-003.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.7837 - accuracy: 0.4927 - sparse_top_k_categorical_accuracy: 0.7151 - val_loss: 1.7521 - val_accuracy: 0.5022 - val_sparse_top_k_categorical_accuracy: 0.7240
+Epoch 4/5
+7342/7347 [============================>.] - ETA: 0s - loss: 1.7447 - accuracy: 0.5018 - sparse_top_k_categorical_accuracy: 0.7230
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-004.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.7447 - accuracy: 0.5017 - sparse_top_k_categorical_accuracy: 0.7230 - val_loss: 1.7237 - val_accuracy: 0.5085 - val_sparse_top_k_categorical_accuracy: 0.7293
+Epoch 5/5
+7344/7347 [============================>.] - ETA: 0s - loss: 1.7167 - accuracy: 0.5078 - sparse_top_k_categorical_accuracy: 0.7287
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-005.ckpt
+7347/7347 [==============================] - 54s 7ms/step - loss: 1.7168 - accuracy: 0.5078 - sparse_top_k_categorical_accuracy: 0.7286 - val_loss: 1.6930 - val_accuracy: 0.5151 - val_sparse_top_k_categorical_accuracy: 0.7356
+1563/1563 - 3s - loss: 1.7646 - accuracy: 0.4967 - sparse_top_k_categorical_accuracy: 0.7176
+1.764613151550293 0.49667999148368835 0.7176200151443481
+Epoch 1/5
+7341/7347 [============================>.] - ETA: 0s - loss: 1.6941 - accuracy: 0.5134 - sparse_top_k_categorical_accuracy: 0.7336
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-001.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.6941 - accuracy: 0.5133 - sparse_top_k_categorical_accuracy: 0.7336 - val_loss: 1.6715 - val_accuracy: 0.5197 - val_sparse_top_k_categorical_accuracy: 0.7410
+Epoch 2/5
+7345/7347 [============================>.] - ETA: 0s - loss: 1.6755 - accuracy: 0.5180 - sparse_top_k_categorical_accuracy: 0.7373
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-002.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.6755 - accuracy: 0.5180 - sparse_top_k_categorical_accuracy: 0.7373 - val_loss: 1.6524 - val_accuracy: 0.5259 - val_sparse_top_k_categorical_accuracy: 0.7444
+Epoch 3/5
+7344/7347 [============================>.] - ETA: 0s - loss: 1.6593 - accuracy: 0.5214 - sparse_top_k_categorical_accuracy: 0.7412
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-003.ckpt
+7347/7347 [==============================] - 54s 7ms/step - loss: 1.6593 - accuracy: 0.5214 - sparse_top_k_categorical_accuracy: 0.7412 - val_loss: 1.6434 - val_accuracy: 0.5277 - val_sparse_top_k_categorical_accuracy: 0.7469
+Epoch 4/5
+7346/7347 [============================>.] - ETA: 0s - loss: 1.6450 - accuracy: 0.5251 - sparse_top_k_categorical_accuracy: 0.7445
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-004.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.6450 - accuracy: 0.5251 - sparse_top_k_categorical_accuracy: 0.7445 - val_loss: 1.6228 - val_accuracy: 0.5318 - val_sparse_top_k_categorical_accuracy: 0.7511
+Epoch 5/5
+7340/7347 [============================>.] - ETA: 0s - loss: 1.6324 - accuracy: 0.5279 - sparse_top_k_categorical_accuracy: 0.7473
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/tree/128128128/cp-005.ckpt
+7347/7347 [==============================] - 53s 7ms/step - loss: 1.6322 - accuracy: 0.5279 - sparse_top_k_categorical_accuracy: 0.7473 - val_loss: 1.6092 - val_accuracy: 0.5375 - val_sparse_top_k_categorical_accuracy: 0.7540
+1563/1563 - 3s - loss: 1.7494 - accuracy: 0.5031 - sparse_top_k_categorical_accuracy: 0.7214
+1.7493926286697388 0.5031399726867676 0.7214400172233582
+train finished

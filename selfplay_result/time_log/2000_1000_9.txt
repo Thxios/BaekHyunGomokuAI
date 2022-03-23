@@ -1,0 +1,33 @@
+Black player: Deep MCTS Agent with compute budget 2000
+152.0424
+262.4470
+195.6393
+179.1537
+157.0896
+125.5717
+80.0059
+80.3809
+175.3878
+56.8792
+17.2200
+8.0475
+1.5626
+average: 114.7252s per action
+         57.3626ms per playout
+
+White player: Deep MCTS Agent with compute budget 1000
+81.6935
+146.0888
+105.9765
+94.2256
+93.3506
+70.6770
+55.9260
+36.4714
+29.7522
+35.3463
+20.8140
+5.8911
+1.0470
+average: 59.7892s per action
+         59.7892ms per playout

@@ -1,0 +1,68 @@
+Model: "ValueNetwork"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+Conv_5x5 (Conv2D)            (None, 11, 11, 128)       6528      
+_________________________________________________________________
+Conv1 (Conv2D)               (None, 11, 11, 128)       147584    
+_________________________________________________________________
+MaxPool1 (MaxPooling2D)      (None, 6, 6, 128)         0         
+_________________________________________________________________
+Conv2 (Conv2D)               (None, 6, 6, 128)         147584    
+_________________________________________________________________
+flatten (Flatten)            (None, 4608)              0         
+_________________________________________________________________
+FC_1 (Dense)                 (None, 512)               2359808   
+_________________________________________________________________
+FC_2 (Dense)                 (None, 1)                 513       
+=================================================================
+Total params: 2,662,017
+Trainable params: 2,662,017
+Non-trainable params: 0
+_________________________________________________________________
+
+ data ready
+Epoch 1/5
+3438/3438 [==============================] - ETA: 0s - loss: 0.5207 - accuracy: 0.7292
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-001.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.5207 - accuracy: 0.7292 - val_loss: 0.3778 - val_accuracy: 0.8271
+Epoch 2/5
+3437/3438 [============================>.] - ETA: 0s - loss: 0.2723 - accuracy: 0.8805
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-002.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.2723 - accuracy: 0.8805 - val_loss: 0.2320 - val_accuracy: 0.9007
+Epoch 3/5
+3435/3438 [============================>.] - ETA: 0s - loss: 0.1669 - accuracy: 0.9306
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-003.ckpt
+3438/3438 [==============================] - 36s 11ms/step - loss: 0.1669 - accuracy: 0.9306 - val_loss: 0.1999 - val_accuracy: 0.9179
+Epoch 4/5
+3433/3438 [============================>.] - ETA: 0s - loss: 0.1235 - accuracy: 0.9496
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-004.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.1234 - accuracy: 0.9496 - val_loss: 0.1578 - val_accuracy: 0.9363
+Epoch 5/5
+3437/3438 [============================>.] - ETA: 0s - loss: 0.0994 - accuracy: 0.9603
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-005.ckpt
+3438/3438 [==============================] - 36s 11ms/step - loss: 0.0994 - accuracy: 0.9603 - val_loss: 0.1393 - val_accuracy: 0.9452
+625/625 - 2s - loss: 0.1393 - accuracy: 0.9452
+0.13934528827667236 0.9452000260353088
+Epoch 1/5
+3434/3438 [============================>.] - ETA: 0s - loss: 0.0854 - accuracy: 0.9660
+Epoch 00001: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-001.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.0854 - accuracy: 0.9660 - val_loss: 0.1348 - val_accuracy: 0.9463
+Epoch 2/5
+3433/3438 [============================>.] - ETA: 0s - loss: 0.0756 - accuracy: 0.9698
+Epoch 00002: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-002.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.0756 - accuracy: 0.9698 - val_loss: 0.1239 - val_accuracy: 0.9524
+Epoch 3/5
+3436/3438 [============================>.] - ETA: 0s - loss: 0.0687 - accuracy: 0.9728
+Epoch 00003: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-003.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.0687 - accuracy: 0.9728 - val_loss: 0.1203 - val_accuracy: 0.9567
+Epoch 4/5
+3435/3438 [============================>.] - ETA: 0s - loss: 0.0621 - accuracy: 0.9755
+Epoch 00004: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-004.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.0622 - accuracy: 0.9755 - val_loss: 0.1262 - val_accuracy: 0.9533
+Epoch 5/5
+3436/3438 [============================>.] - ETA: 0s - loss: 0.0582 - accuracy: 0.9770
+Epoch 00005: saving model to ./gdrive/My Drive/colab_mount/model/value/swap/cp-005.ckpt
+3438/3438 [==============================] - 37s 11ms/step - loss: 0.0582 - accuracy: 0.9770 - val_loss: 0.1183 - val_accuracy: 0.9555
+625/625 - 2s - loss: 0.1183 - accuracy: 0.9555
+0.11825177073478699 0.9555000066757202

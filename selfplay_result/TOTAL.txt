@@ -1,0 +1,9 @@
+vs 100
+	100	500	1000	2000
+Black	none	3w7l	1w9l	0w10l
+White	none	2w8l	2w8l	0w10l
+
+vs 500
+	100	500	1000	2000
+Black	7w3l	4w6l	4w6l	3w7l
+white	8w2l	6w4l	3w7l	3w7l

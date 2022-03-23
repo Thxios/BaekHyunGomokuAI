@@ -1,0 +1,13 @@
+W
+W
+W
+W
+W
+W
+W
+W
+W
+W
+
+BLACK 0
+WHITE 10
